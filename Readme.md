@@ -14,6 +14,10 @@ Include `videojs-resume.min.css` and `videojs-resume.min.js`.
   });
 ```
 
+## Example
+
+[Example using Video.js 5](https://s3.amazonaws.com/sprice-testing/videojs-resume.html)
+
 ## License
 
 Licesned MIT. See LICENSE file.
