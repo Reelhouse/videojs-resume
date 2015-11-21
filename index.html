@@ -1,0 +1,29 @@
+
+<html lang="en">
+  <head>
+    <link href="/css/video-js.min.css" rel="stylesheet">
+    <link href="/css/videojs-resume.min.css" rel="stylesheet">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/video.min.js"></script>
+    <script src="/js/store.min.js"></script>
+    <script src="/js/videojs-resume.min.js"></script>
+  </head>
+  <body>
+      <video id="example-video" width="960" height="540" class="video-js vjs-default-skin" controls
+        poster="https://s3.amazonaws.com/sprice-videos/dash-hls-example-3/dash/evil-frank.jpg">
+        <source src="https://s3.amazonaws.com/sprice-videos/dash-hls-example-3/mp4/500.mp4" type='video/mp4'>
+      </video>
+      <p>During playback, refresh the page to trigger VideoJS.Resume</p>
+
+    <script>
+        'use strict';
+        var player = videojs('example-video', {
+        }, function() {
+          player.Resume({
+            uuid: 'foobar',
+            playbackOffset: 5
+          });
+        });
+    </script>
+  </body>
+</html>
