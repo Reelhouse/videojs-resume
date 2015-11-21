@@ -9,8 +9,8 @@
 
 .vjs-default-skin .vjs-resume-overlay .vjs-resume-overlay-dialog {
 	position: relative;
-  	top: 50%;
-  	transform: translateY(-50%);
+  top: 50%;
+  transform: translateY(-50%);
 	background-color: #111;
 	color: #fff;
 	margin: 0 auto;
