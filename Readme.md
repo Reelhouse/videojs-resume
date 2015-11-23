@@ -22,7 +22,7 @@ Include:
 
 ## Example
 
-[Example using Video.js 5](https://s3.amazonaws.com/sprice-testing/videojs-resume.html)
+[Example using Video.js 5](https://sprice.github.io/videojs-resume/)
 
 ## License
 
