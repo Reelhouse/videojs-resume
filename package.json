@@ -4,8 +4,8 @@
   "description": "Resume playback in VideoJS",
   "scripts": {
     "build": "npm run sass; npm run build-dist",
-    "sass": "mkdir -p dist/ && ./node_modules/.bin/node-sass --output-style compact ./lib/videojs-resume.css dist/videojs-resume.min.css",
-    "build-dist": "mkdir -p dist/ && ./node_modules/.bin/browserify ./lib/videojs-resume.js -s videojs-resume | ./node_modules/.bin/uglifyjs > dist/videojs-resume.min.js"
+    "sass": "mkdir -p dist/ && ./node_modules/.bin/node-sass --output-style compact ./src/videojs-resume.css dist/videojs-resume.min.css",
+    "build-dist": "mkdir -p dist/ && ./node_modules/.bin/browserify ./src/videojs-resume.js -s videojs-resume | ./node_modules/.bin/uglifyjs > dist/videojs-resume.min.js"
   },
   "keywords": [
     "videojs",
