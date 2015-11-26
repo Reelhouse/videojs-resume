@@ -24,6 +24,10 @@ Include:
 
 [Example using Video.js 5](https://sprice.github.io/videojs-resume/)
 
+## Support
+
+Browser testing for this project has been graciouslly donated by [BrowserStack](https://www.browserstack.com).
+
 ## License
 
 Licesned MIT. See LICENSE file.
