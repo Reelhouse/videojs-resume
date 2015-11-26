@@ -26,7 +26,7 @@ Include:
 
 ## Support
 
-Browser testing for this project has been graciouslly donated by [BrowserStack](https://www.browserstack.com).
+Browser testing for this project has been graciously donated by [BrowserStack](https://www.browserstack.com).
 
 ## License
 
