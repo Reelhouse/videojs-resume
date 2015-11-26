@@ -4,7 +4,13 @@ A VideoJS plugin to resume playback of a video at the point in time it was left.
 
 ## Usage
 
-Include `videojs-resume.min.css` and `videojs-resume.min.js`.
+Requires [store.js](https://github.com/marcuswestin/store.js/) &amp; jQuery.
+
+Include:
+* `jquery.js`
+* `store.js`
+* `videojs-resume.min.css`
+* `videojs-resume.min.js`
 
 ```js
   var player = videojs('example-video');
@@ -16,7 +22,11 @@ Include `videojs-resume.min.css` and `videojs-resume.min.js`.
 
 ## Example
 
-[Example using Video.js 5](https://s3.amazonaws.com/sprice-testing/videojs-resume.html)
+[Example using Video.js 5](https://sprice.github.io/videojs-resume/)
+
+## Support
+
+Browser testing for this project has been graciously donated by [BrowserStack](https://www.browserstack.com).
 
 ## License
 
