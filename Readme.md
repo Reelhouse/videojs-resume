@@ -4,10 +4,9 @@ A VideoJS plugin to resume playback of a video at the point in time it was left.
 
 ## Usage
 
-Requires [store.js](https://github.com/marcuswestin/store.js/) &amp; jQuery.
+Requires Video.js 5.1.0 or greater &amp; [store.js](https://github.com/marcuswestin/store.js/).
 
 Include:
-* `jquery.js`
 * `store.js`
 * `videojs-resume.min.css`
 * `videojs-resume.min.js`
@@ -17,6 +16,9 @@ Include:
   player.Resume({
     uuid: 'UNIQUE_VIDEO_IDENTIFIER',
     playbackOffset: 5 // begin playing video this number of seconds before it otherwise would.
+    title: 'Custom title of resume modal dialog',
+    resumeButtonText: 'Custom resume button text',
+    cancelButtonText: 'Custom cancel button text'
   });
 ```
 
