@@ -32,4 +32,4 @@ Browser testing for this project has been graciously donated by [BrowserStack](h
 
 ## License
 
-Licesned MIT. See LICENSE file.
+Licesned Apache 2. See LICENSE file.
