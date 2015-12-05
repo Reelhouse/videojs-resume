@@ -1,10 +1,8 @@
-'use strict';
-
-let videojs = require('video.js');
-let store = require('store');
-let Button = videojs.getComponent('Button');
-let Component = videojs.getComponent('Component');
-let ModalDialog = videojs.getComponent('ModalDialog');
+import videojs from 'video.js';
+import store from 'store';
+const Button = videojs.getComponent('Button');
+const Component = videojs.getComponent('Component');
+const ModalDialog = videojs.getComponent('ModalDialog');
 
 class ResumeButton extends Button {
 
@@ -33,10 +31,6 @@ ResumeButton.prototype.controlText_ = 'Resume';
 
 class ResumeCancelButton extends Button {
 
-  constructor(player, options) {
-    super(player, options);
-  }
-
   buildCSSClass() {
     return 'vjs-no-resume';
   }
@@ -49,6 +43,7 @@ class ResumeCancelButton extends Button {
 
   handleClick() {
     this.player_.resumeModal.close();
+    store.remove(this.options_.key);
   }
 }
 ResumeButton.prototype.controlText_ = 'No Thanks';
@@ -63,6 +58,7 @@ class ModalButtons extends Component {
     });
     this.addChild('ResumeCancelButton', {
       buttonText: options.cancelButtonText,
+      key: options.key
     });
   }
 
@@ -86,7 +82,8 @@ class ResumeModal extends ModalDialog {
       title: options.title,
       resumeButtonText: options.resumeButtonText,
       cancelButtonText: options.cancelButtonText,
-      resumeFromTime: options.resumeFromTime
+      resumeFromTime: options.resumeFromTime,
+      key: options.key
     });
   }
 
@@ -99,7 +96,7 @@ videojs.registerComponent('ResumeCancelButton', ResumeCancelButton);
 videojs.registerComponent('ModalButtons', ModalButtons);
 videojs.registerComponent('ResumeModal', ResumeModal);
 
-let Resume = function(options) {
+const Resume = function(options) {
 
   if (!store) return console.error('store.js is not available');
   if (!store.enabled) return console.error('Local storage is not supported by your browser. Please disable "Private Mode", or upgrade to a modern browser.');
@@ -120,7 +117,6 @@ let Resume = function(options) {
     store.remove(key);
   });
 
-
   player.ready(function() {
     let resumeFromTime = store.get(key);
 
@@ -131,7 +127,8 @@ let Resume = function(options) {
         title: title,
         resumeButtonText: resumeButtonText,
         cancelButtonText: cancelButtonText,
-        resumeFromTime: resumeFromTime
+        resumeFromTime: resumeFromTime,
+        key: key
       });
     }
   });
