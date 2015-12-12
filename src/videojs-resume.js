@@ -8,7 +8,7 @@ class ResumeButton extends Button {
 
   constructor(player, options) {
     super(player, options);
-    this.resumeFromTime = options.resumeFromTime
+    this.resumeFromTime = options.resumeFromTime;
   }
 
   buildCSSClass() {
@@ -97,11 +97,17 @@ videojs.registerComponent('ModalButtons', ModalButtons);
 videojs.registerComponent('ResumeModal', ResumeModal);
 
 const Resume = function(options) {
+  let msg;
 
-  if (!store) return console.error('store.js is not available');
-  if (!store.enabled) return console.error('Local storage is not supported by your browser. Please disable "Private Mode", or upgrade to a modern browser.');
+  if (!store) {
+    return videojs.log('store.js is not available');
+  }
+  if (!store.enabled) {
+    msg = 'Local storage is not supported by your browser.';
+    msg += ' Please disable "Private Mode", or upgrade to a modern browser.';
+    return videojs.log(msg);
+  }
 
-  let player = this;
   let videoId = options.uuid;
   let title = options.title || 'Resume from where you left off?';
   let resumeButtonText = options.resumeButtonText || 'Resume';
@@ -109,26 +115,30 @@ const Resume = function(options) {
   let playbackOffset = options.playbackOffset || 0;
   let key = 'videojs-resume:' + videoId;
 
-  player.on('timeupdate', function() {
-    store.set(key, player.currentTime());
+  this.on('timeupdate', function() {
+    store.set(key, this.currentTime());
   });
 
-  player.on('ended', function() {
+  this.on('ended', function() {
     store.remove(key);
   });
 
-  player.ready(function() {
+  this.ready(function() {
     let resumeFromTime = store.get(key);
 
     if (resumeFromTime) {
-      if (resumeFromTime >= 5) resumeFromTime -= playbackOffset;
-      if (resumeFromTime <= 0) resumeFromTime = 0;
-      player.addChild('ResumeModal', {
-        title: title,
-        resumeButtonText: resumeButtonText,
-        cancelButtonText: cancelButtonText,
-        resumeFromTime: resumeFromTime,
-        key: key
+      if (resumeFromTime >= 5) {
+        resumeFromTime -= playbackOffset;
+      }
+      if (resumeFromTime <= 0) {
+        resumeFromTime = 0;
+      }
+      this.addChild('ResumeModal', {
+        title,
+        resumeButtonText,
+        cancelButtonText,
+        resumeFromTime,
+        key
       });
     }
   });
