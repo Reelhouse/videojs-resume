@@ -9,6 +9,7 @@ class ResumeButton extends Button {
   constructor(player, options) {
     super(player, options);
     this.resumeFromTime = options.resumeFromTime;
+    this.player = player;
   }
 
   buildCSSClass() {
@@ -26,7 +27,20 @@ class ResumeButton extends Button {
     this.player_.currentTime(this.resumeFromTime);
     this.player_.play();
   }
+
+  handleKeyPress(event) {
+    // Check for space bar (32) or enter (13) keys
+    if (event.which === 32 || event.which === 13) {
+      if (this.player.paused()) {
+        this.player.play();
+      } else {
+        this.player.pause();
+      }
+      event.preventDefault();
+    }
+  }
 }
+
 ResumeButton.prototype.controlText_ = 'Resume';
 
 class ResumeCancelButton extends Button {
