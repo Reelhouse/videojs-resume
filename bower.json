@@ -1,0 +1,33 @@
+{
+  "name": "videojs-resume",
+  "version": "0.2.1",
+  "description": "Resume playback in VideoJS",
+  "main": [
+    "src/videojs-resume.js",
+    "src/videojs-resume.css",
+    "dist/videojs-resume.min.js",
+    "dist/videojs-resume.min.css"
+  ],
+  "authors": [
+    "Shawn Price"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "videojs",
+    "plugin",
+    "resume"
+  ],
+  "homepage": "https://github.com/sprice/videojs-resume",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
