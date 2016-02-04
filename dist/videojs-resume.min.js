@@ -53,6 +53,7 @@ var ResumeButton = (function (_Button) {
       this.player_.resumeModal.close();
       this.player_.currentTime(this.resumeFromTime);
       this.player_.play();
+      this.player_.trigger('resumevideo');
     }
   }, {
     key: 'handleKeyPress',
