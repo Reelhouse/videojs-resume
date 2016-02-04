@@ -2,10 +2,12 @@
   "name": "videojs-resume",
   "version": "0.2.2",
   "description": "Resume playback in VideoJS",
+  "main": "dist/videojs-resume.min.js",
   "scripts": {
-    "build": "npm run sass; npm run build-dist",
+    "build": "npm run sass; npm run build-dist; npm run uglify",
     "sass": "mkdir -p dist/ && ./node_modules/.bin/node-sass --output-style compact ./src/videojs-resume.css dist/videojs-resume.min.css",
-    "build-dist": "mkdir -p dist/ && ./node_modules/.bin/browserify ./src/videojs-resume.js  -o dist/videojs-resume.min.js"
+    "build-dist": "mkdir -p dist/ && ./node_modules/.bin/browserify ./src/videojs-resume.js  -o dist/videojs-resume.js",
+    "uglify": "./node_modules/.bin/uglifyjs dist/videojs-resume.js --compress -o dist/videojs-resume.min.js"
   },
   "keywords": [
     "videojs",
