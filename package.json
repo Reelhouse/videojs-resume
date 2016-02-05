@@ -1,6 +1,6 @@
 {
   "name": "videojs-resume",
-  "version": "0.2.2",
+  "version": "0.3.2",
   "description": "Resume playback in VideoJS",
   "main": "dist/videojs-resume.min.js",
   "scripts": {
