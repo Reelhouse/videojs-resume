@@ -15,7 +15,7 @@ Include:
   var player = videojs('example-video');
   player.Resume({
     uuid: 'UNIQUE_VIDEO_IDENTIFIER',
-    playbackOffset: 5 // begin playing video this number of seconds before it otherwise would.
+    playbackOffset: 5, // begin playing video this number of seconds before it otherwise would.
     title: 'Custom title of resume modal dialog',
     resumeButtonText: 'Custom resume button text',
     cancelButtonText: 'Custom cancel button text'
